@@ -141,8 +141,6 @@ a { color: var(--link); }
 }
 .gallery-item img { border: 0; display: block; height: auto; }
 .gallery-item.feature img { height: 100%; aspect-ratio: auto; }
-.streaming-links h3 { margin-bottom: 8px; }
-.platform-list { list-style: none; padding: 0; display: flex; gap: 20px; flex-wrap: wrap; margin: 0; }
 
 /* Contact form */
 .contact-form {
