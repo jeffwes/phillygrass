@@ -51,6 +51,9 @@ a { color: var(--link); }
 .social-icons a { display: grid; place-items: center; width: 40px; height: 40px; color: var(--on-dark); }
 .social-icons a:hover { color: var(--accent); }
 .header-social { margin-left: 16px; }
+.header-social a { width: 44px; height: 44px; color: var(--accent); }
+.header-social a:hover { color: var(--on-dark); }
+.header-social svg { width: 28px; height: 28px; }
 .nav-toggle {
   display: none; background: none; border: 0;
   color: var(--on-dark); font-size: 1.6rem; cursor: pointer;
@@ -162,7 +165,10 @@ a { color: var(--link); }
 .button.outline { background: transparent; color: var(--link); border: 2px solid var(--link); }
 
 /* Contact */
-.social { list-style: none; padding: 0; display: flex; gap: 20px; flex-wrap: wrap; }
+.follow-hint { margin: 20px auto 0; font-weight: 600; }
+.follow-heading { margin: 40px auto 4px; font-size: 1.3rem; }
+.social-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.social-buttons .button { display: inline-flex; align-items: center; gap: 8px; }
 
 /* Footer */
 .site-footer { background: var(--night); color: var(--on-dark); text-align: center; padding: 20px; }
