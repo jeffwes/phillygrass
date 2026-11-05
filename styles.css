@@ -1,0 +1,132 @@
+:root {
+  --bg: #f6efe3;
+  --bg-alt: #ece1cd;
+  --ink: #2b2118;
+  --muted: #6b5a49;
+  --accent: #a4472b;
+  --accent-ink: #fff8ef;
+  --wood: #3b2a1e;
+  --radius: 10px;
+  --max: 1000px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+h1, h2, .logo { font-family: "Rye", serif; font-weight: 400; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--wood);
+}
+.logo { color: var(--accent-ink); text-decoration: none; font-size: 1.4rem; }
+.site-nav { display: flex; gap: 24px; }
+.site-nav a { color: var(--accent-ink); text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
+.nav-toggle {
+  display: none; background: none; border: 0;
+  color: var(--accent-ink); font-size: 1.6rem; cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  min-height: 70vh;
+  display: grid; place-items: center; text-align: center;
+  padding: 60px 20px;
+  color: var(--accent-ink);
+  /* Swap in a band photo: url("images/hero.jpg") center/cover */
+  background:
+    linear-gradient(rgba(30, 20, 12, 0.55), rgba(30, 20, 12, 0.7)),
+    linear-gradient(135deg, #7a4a2a, #2f4a3a);
+}
+.hero h1 { font-size: clamp(2.8rem, 9vw, 5.5rem); margin: 0; line-height: 1.1; }
+.tagline { font-size: 1.25rem; margin: 12px 0 28px; }
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 12px 22px; border-radius: var(--radius);
+  text-decoration: none; font-weight: 600;
+}
+.button:hover { filter: brightness(1.1); }
+.button.small { padding: 6px 14px; font-size: 0.9rem; }
+
+/* Sections */
+.section { padding: 72px 20px; }
+.section > * { max-width: var(--max); margin-left: auto; margin-right: auto; }
+.section.alt { background: var(--bg-alt); }
+.section h2 { font-size: 2.2rem; margin-top: 0; }
+.lead { font-size: 1.2rem; }
+
+/* Members */
+.members {
+  display: grid; gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-top: 32px;
+}
+.member { margin: 0; text-align: center; }
+.member .photo {
+  aspect-ratio: 1; border-radius: 50%;
+  background: var(--bg-alt) center/cover;
+  border: 4px solid var(--wood);
+}
+.member figcaption { margin-top: 10px; display: flex; flex-direction: column; }
+.member span { color: var(--muted); }
+
+/* Shows */
+.shows { list-style: none; padding: 0; display: grid; gap: 14px; }
+.show {
+  display: flex; align-items: center; gap: 20px;
+  background: var(--bg); padding: 14px 18px; border-radius: var(--radius);
+}
+.show-date {
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 60px; padding: 6px; border-radius: 8px;
+  background: var(--wood); color: var(--accent-ink); line-height: 1.1;
+}
+.show-date .month { text-transform: uppercase; font-size: 0.8rem; }
+.show-date .day { font-size: 1.6rem; font-weight: 600; }
+.show-info { flex: 1; display: flex; flex-direction: column; }
+
+/* Media */
+.media { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.embed { aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; }
+.embed iframe { width: 100%; height: 100%; border: 0; }
+.placeholder {
+  display: grid; place-items: center;
+  border: 2px dashed var(--muted); color: var(--muted);
+}
+
+/* Contact */
+.social { list-style: none; padding: 0; display: flex; gap: 20px; flex-wrap: wrap; }
+
+/* Footer */
+.site-footer { background: var(--wood); color: var(--accent-ink); text-align: center; padding: 20px; }
+
+/* Mobile */
+@media (max-width: 680px) {
+  .nav-toggle { display: block; }
+  .site-nav {
+    display: none;
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--wood);
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a { padding: 14px 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+  .section { padding: 56px 16px; }
+  .show { flex-wrap: wrap; }
+}
