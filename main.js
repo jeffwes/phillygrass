@@ -12,16 +12,23 @@ nav.addEventListener("click", (e) => {
   if (e.target.tagName === "A") nav.classList.remove("open");
 });
 
-// Shows list: upcoming only, soonest first
+// Shows: upcoming (soonest first) and recent (most recent first)
 const today = new Date().toISOString().slice(0, 10);
 const upcoming = SHOWS.filter((s) => s.date >= today).sort((a, b) => a.date.localeCompare(b.date));
-const list = document.getElementById("show-list");
+const past = SHOWS.filter((s) => s.date < today).sort((a, b) => b.date.localeCompare(a.date));
 
 if (upcoming.length === 0) {
   document.getElementById("no-shows").hidden = false;
 }
+if (past.length > 0) {
+  document.getElementById("past-heading").hidden = false;
+}
 
-for (const show of upcoming) {
+renderShows(upcoming, document.getElementById("show-list"));
+renderShows(past, document.getElementById("past-list"));
+
+function renderShows(shows, list) {
+for (const show of shows) {
   const d = new Date(show.date + "T12:00:00");
   const li = document.createElement("li");
   li.className = "show";
@@ -35,7 +42,7 @@ for (const show of upcoming) {
       <span class="muted"></span>
     </div>`;
   li.querySelector("strong").textContent = show.venue;
-  li.querySelector(".muted").textContent = `${show.city} · ${show.time}`;
+  li.querySelector(".muted").textContent = [show.city, show.time].filter(Boolean).join(" · ");
   if (show.link) {
     const a = document.createElement("a");
     a.className = "button small";
@@ -44,4 +51,5 @@ for (const show of upcoming) {
     li.appendChild(a);
   }
   list.appendChild(li);
+}
 }
