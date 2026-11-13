@@ -46,6 +46,7 @@ a { color: var(--link); }
 }
 .site-nav a:hover { color: var(--accent); }
 .logo { margin-right: auto; }
+.logo-mark { display: block; height: 40px; width: auto; }
 .social-icons { display: flex; gap: 4px; }
 .social-icons a { display: grid; place-items: center; width: 40px; height: 40px; color: var(--on-dark); }
 .social-icons a:hover { color: var(--accent); }
@@ -199,6 +200,7 @@ a { color: var(--link); }
   .site-nav.open { display: flex; }
   .site-nav a { padding: 14px 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
   .logo { font-size: 1.45rem; }
+  .logo-mark { height: 32px; }
   .tagline-bar { font-size: 0.68rem; letter-spacing: 0.1em; padding: 12px 12px 14px; }
   .section { padding: 56px 16px; }
   .show { flex-wrap: wrap; }
