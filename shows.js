@@ -4,8 +4,8 @@
 const SHOWS = [
   // Upcoming
   { date: "2026-11-07", venue: "Farmtruck Brewing", city: "Medford, NJ", time: "6:00 – 10:00 PM", link: "" },
+  { date: "2026-11-28", venue: "Secondhand Ranch", city: "Philadelphia, PA", time: "2:00 – 5:00 PM", link: "" },
   { date: "2026-12-04", venue: "Farmtruck Brewing", city: "Medford, NJ", time: "6:00 – 10:00 PM", link: "" },
-  { date: "2026-12-12", venue: "Steel City Brewery", city: "Phoenixville, PA", time: "7:00 – 9:00 PM", link: "" },
 
   // Recent
   { date: "2026-10-23", venue: "Farmtruck Brewing", city: "Medford, NJ", time: "", link: "" },
